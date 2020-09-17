@@ -1,6 +1,5 @@
-import React, { useReducer, useState } from 'react'
-import {
-    ADD_TODO } from '../reducers/todoReducer'
+import React, { useState } from 'react'
+import { ADD_TODO } from '../reducers/todoReducer'
 
 const TodoForm = (props) => {
     // state for form

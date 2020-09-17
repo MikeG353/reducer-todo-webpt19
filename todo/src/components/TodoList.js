@@ -1,5 +1,5 @@
 import React from "react"
-import { todoReducer } from "../reducers/todoReducer";
+import { CLEAR_COMPLETED } from "../reducers/todoReducer";
 
 import Todo from "./Todo"
 
@@ -12,8 +12,15 @@ const TodoList = (props) => {
                     key={todo.id}
                     todo={todo}
                     completed={todo.completed}
+                    dispatch={props.dispatch}
                 />
             ))}
+            <button
+                onClick={(e) => {
+                    e.preventDefault();
+                    props.dispatch({type: CLEAR_COMPLETED})
+                }}
+            >Clear Completed</button>
         </div>
     )
 }

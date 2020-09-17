@@ -6,7 +6,7 @@ import { initialTodoState, todoReducer } from './reducers/todoReducer';
 
 function App() {
   const [state, dispatch] = useReducer(todoReducer, initialTodoState)
-  console.log(state.todoList)
+  
   return (
     <div className="App">
       <div className="header">
@@ -16,6 +16,7 @@ function App() {
       
       <TodoList 
         todoList={state.todoList}
+        dispatch={dispatch}
         
       />
     </div>
