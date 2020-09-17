@@ -11,11 +11,12 @@ function App() {
     <div className="App">
       <div className="header">
         <h1>Reducer Todo List:</h1>
-        <TodoForm />
+        <TodoForm dispatch={dispatch}/>
       </div>
       
       <TodoList 
         todoList={state.todoList}
+        
       />
     </div>
   );

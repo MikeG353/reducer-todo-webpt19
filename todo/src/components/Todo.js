@@ -2,7 +2,7 @@ import React from 'react'
 
 const Todo = (props) => {
     return (
-        <div>
+        <div className={`todo${props.todo.completed ? " completed" : ""}`}>
             <p>{props.todo.name}</p>
         </div>
     )

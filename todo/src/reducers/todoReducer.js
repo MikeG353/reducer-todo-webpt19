@@ -12,6 +12,10 @@ export const todoReducer = (state, action) => {
             console.log('state :', state, 'action :', action)
             return {
                 ...state,
+                todoList: [
+                    ...state.todoList,
+                    {name: action.payload, id: Date.now(), completed:false}
+                ]
             }
         }
         default:

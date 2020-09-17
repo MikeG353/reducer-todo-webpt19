@@ -1,23 +1,19 @@
 import React, { useReducer, useState } from 'react'
-import { 
-    todoReducer,
+import {
     ADD_TODO } from '../reducers/todoReducer'
 
-const TodoForm = () => {
+const TodoForm = (props) => {
     // state for form
     const [newTaskText, setNewTaskText] = useState("");
-    const [state, dispatch] = useReducer(todoReducer)
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch({type: ADD_TODO, payload: newTaskText})
-    }
     const handleChanges = (e) => {
         setNewTaskText(e.target.value)
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={(e) => {
+            e.preventDefault();
+            props.dispatch({type: ADD_TODO, payload: newTaskText})}} >
             <input 
                 type="text"
                 name="todo"
